@@ -207,7 +207,7 @@ export default function SourcesPage() {
                 <label className="font-label text-[13px] uppercase tracking-widest block mb-1.5" style={{ color: 'rgba(255,255,255,0.65)' }}>Source Name *</label>
                 <input value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   className="w-full px-3 py-2 text-lg" style={{ background: '#181818', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', outline: 'none' }}
-                  placeholder="e.g. WhatsApp, LinkedIn..." />
+                  placeholder="e.g. WhatsApp, YouTube..." />
               </div>
               <div>
                 <label className="font-label text-[13px] uppercase tracking-widest block mb-1.5" style={{ color: 'rgba(255,255,255,0.65)' }}>Color</label>

@@ -17,7 +17,7 @@ const recentPosts = [
   { id: '1', title: 'CNY Countdown Post',    platform: 'Instagram', status: 'scheduled',    scheduledAt: '25 Jan 18:00', category: 'Festive Posts' },
   { id: '2', title: 'Product Launch Teaser', platform: 'Facebook',  status: 'draft',        scheduledAt: '—',            category: 'Product Showcase' },
   { id: '3', title: 'Behind The Scenes',     platform: 'TikTok',    status: 'published',    scheduledAt: '20 Jan 12:00', category: 'Brand Content' },
-  { id: '4', title: 'Client Testimonial',    platform: 'LinkedIn',  status: 'pending_review',scheduledAt: '26 Jan 09:00',category: 'Brand Content' },
+  { id: '4', title: 'Client Testimonial',    platform: 'YouTube',  status: 'pending_review',scheduledAt: '26 Jan 09:00',category: 'Brand Content' },
 ]
 
 const STATUS: Record<string, { bg: string; text: string }> = {

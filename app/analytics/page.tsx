@@ -22,7 +22,7 @@ const engagementData = Array.from({ length: 30 }, (_, i) => ({
 const platformData = [
   { platform: 'Instagram', posts: 15, engagement: 7.8, reach: 12400 },
   { platform: 'Facebook',  posts: 12, engagement: 4.2, reach: 8900 },
-  { platform: 'LinkedIn',  posts: 6,  engagement: 5.1, reach: 3200 },
+  { platform: 'YouTube',  posts: 6,  engagement: 5.1, reach: 3200 },
   { platform: 'TikTok',    posts: 8,  engagement: 9.4, reach: 21000 },
 ]
 
@@ -30,7 +30,7 @@ const pieData = [
   { name: 'Instagram', value: 38, color: '#e0ee7d' },
   { name: 'TikTok',    value: 24, color: 'rgba(224,238,125,0.5)' },
   { name: 'Facebook',  value: 28, color: 'rgba(255,255,255,0.55)' },
-  { name: 'LinkedIn',  value: 10, color: 'rgba(255,255,255,0.08)' },
+  { name: 'YouTube',  value: 10, color: 'rgba(255,255,255,0.08)' },
 ]
 
 const topPosts = [
@@ -38,7 +38,7 @@ const topPosts = [
   { title: '11.11 Sale Announcement',  platform: 'Instagram', likes: 892,  comments: 67,  shares: 145, er: '8.1%' },
   { title: 'Team Behind The Scenes',   platform: 'Instagram', likes: 654,  comments: 112, shares: 88,  er: '7.6%' },
   { title: 'Client Spotlight Story',   platform: 'Facebook',  likes: 445,  comments: 34,  shares: 67,  er: '5.2%' },
-  { title: 'Product Launch Teaser',    platform: 'LinkedIn',  likes: 312,  comments: 45,  shares: 89,  er: '6.8%' },
+  { title: 'Product Launch Teaser',    platform: 'YouTube',  likes: 312,  comments: 45,  shares: 89,  er: '6.8%' },
 ]
 
 const heatmapDays  = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

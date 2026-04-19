@@ -1,4 +1,4 @@
-export type Platform = 'facebook' | 'instagram' | 'linkedin' | 'tiktok'
+export type Platform = 'facebook' | 'instagram' | 'youtube' | 'tiktok'
 export type PostStatus = 'draft' | 'pending_review' | 'approved' | 'scheduled' | 'published' | 'failed'
 export type UserRole = 'owner' | 'manager' | 'editor' | 'viewer'
 export type FileType = 'image' | 'video' | 'gif'

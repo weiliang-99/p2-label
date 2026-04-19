@@ -7,15 +7,15 @@ import { SURFACE } from '@/lib/theme'
 
 const TEMPLATES = [
   { id: '1', name: 'CNY Greeting',       category: 'Festive Posts',    platforms: ['instagram','facebook'], caption_en: '🧧 Wishing you and your loved ones a prosperous Chinese New Year! May this year bring you health, happiness and abundance. 恭喜发财!\n\n#ChineseNewYear #CNY2025 #P2Label', caption_zh: '🧧 祝您和您的家人新年快乐、身体健康、万事如意！恭喜发财，红包拿来！\n\n#新年快乐 #CNY2025 #P2Label', uses: 8,  emoji: '🧧', accent: '#e0ee7d' },
-  { id: '2', name: 'Product Launch',      category: 'Product Showcase', platforms: ['instagram','facebook','linkedin'], caption_en: '✨ Exciting news! We\'re thrilled to introduce {{product_name}} — {{product_tagline}}.\n\nAvailable now at {{price}}. Limited stocks!\n\n👉 DM us or link in bio to order.', caption_zh: '✨ 激动人心！我们隆重推出 {{product_name}}。\n\n现在以 {{price}} 发售，数量有限！\n\n👉 私信我们订购。', uses: 15, emoji: '🚀', accent: '#a78bfa' },
-  { id: '3', name: 'Testimonial Post',    category: 'Brand Content',    platforms: ['instagram','linkedin'], caption_en: '⭐⭐⭐⭐⭐\n\n"{{client_quote}}" — {{client_name}}, {{client_company}}\n\nWe\'re grateful for clients who trust us.\n\n📩 DM us today!', caption_zh: '⭐⭐⭐⭐⭐\n\n"{{client_quote}}" — {{client_name}}，{{client_company}}\n\n📩 今日私信我们！', uses: 11, emoji: '💬', accent: '#34d399' },
+  { id: '2', name: 'Product Launch',      category: 'Product Showcase', platforms: ['instagram','facebook','youtube'], caption_en: '✨ Exciting news! We\'re thrilled to introduce {{product_name}} — {{product_tagline}}.\n\nAvailable now at {{price}}. Limited stocks!\n\n👉 DM us or link in bio to order.', caption_zh: '✨ 激动人心！我们隆重推出 {{product_name}}。\n\n现在以 {{price}} 发售，数量有限！\n\n👉 私信我们订购。', uses: 15, emoji: '🚀', accent: '#a78bfa' },
+  { id: '3', name: 'Testimonial Post',    category: 'Brand Content',    platforms: ['instagram','youtube'], caption_en: '⭐⭐⭐⭐⭐\n\n"{{client_quote}}" — {{client_name}}, {{client_company}}\n\nWe\'re grateful for clients who trust us.\n\n📩 DM us today!', caption_zh: '⭐⭐⭐⭐⭐\n\n"{{client_quote}}" — {{client_name}}，{{client_company}}\n\n📩 今日私信我们！', uses: 11, emoji: '💬', accent: '#34d399' },
   { id: '4', name: 'Hari Raya Greeting',  category: 'Festive Posts',    platforms: ['instagram','facebook','tiktok'], caption_en: '🌙 Selamat Hari Raya Aidilfitri! Maaf Zahir & Batin 🤲\n\nFrom all of us at P2 Label 💛', caption_zh: '🌙 祝各位穆斯林朋友开斋节快乐！\n\nP2 Label 全体员工祝您节日愉快 💛', uses: 6,  emoji: '🌙', accent: '#fb923c' },
-  { id: '5', name: 'Tips & Education',    category: 'Educational',      platforms: ['instagram','linkedin'], caption_en: '💡 {{tip_number}} Tips for {{topic}}\n\n{{tip_1}}\n{{tip_2}}\n{{tip_3}}\n\nFollow @P2Label for more marketing tips!', caption_zh: '💡 {{tip_number}} 个关于 {{topic}} 的技巧\n\n关注 @P2Label 获取更多营销技巧！', uses: 9,  emoji: '📚', accent: '#60a5fa' },
+  { id: '5', name: 'Tips & Education',    category: 'Educational',      platforms: ['instagram','youtube'], caption_en: '💡 {{tip_number}} Tips for {{topic}}\n\n{{tip_1}}\n{{tip_2}}\n{{tip_3}}\n\nFollow @P2Label for more marketing tips!', caption_zh: '💡 {{tip_number}} 个关于 {{topic}} 的技巧\n\n关注 @P2Label 获取更多营销技巧！', uses: 9,  emoji: '📚', accent: '#60a5fa' },
   { id: '6', name: 'Flash Sale',          category: 'Promotions',       platforms: ['instagram','facebook','tiktok'], caption_en: '🔥 FLASH SALE! 🔥\n\n{{discount}}% OFF on {{product}} — TODAY ONLY!\n\n⏰ Offer ends at {{end_time}}', caption_zh: '🔥 闪购特卖！\n\n{{product}} 低至 {{discount}}% 折扣——仅限今天！\n\n⏰ 优惠截止 {{end_time}}', uses: 20, emoji: '🛍️', accent: '#f87171' },
 ]
 
 const CATEGORIES = ['All', 'Festive Posts', 'Product Showcase', 'Brand Content', 'Educational', 'Promotions']
-const PLATFORM_LABELS: Record<string, string> = { instagram: 'IG', facebook: 'FB', linkedin: 'LI', tiktok: 'TT' }
+const PLATFORM_LABELS: Record<string, string> = { instagram: 'IG', facebook: 'FB', youtube: 'YT', tiktok: 'TT' }
 
 export default function TemplatesPage() {
   const [filter, setFilter] = useState('All')

@@ -11,7 +11,7 @@ import { SURFACE, INPUT_STYLE } from '@/lib/theme'
 const PLATFORMS = [
   { id: 'facebook',  label: 'Facebook',  icon: Globe,     color: '#1877F2' },
   { id: 'instagram', label: 'Instagram', icon: Camera,    color: '#E1306C' },
-  { id: 'linkedin',  label: 'LinkedIn',  icon: Building2, color: '#0A66C2' },
+  { id: 'youtube',  label: 'YouTube',  icon: Building2, color: '#0A66C2' },
   { id: 'tiktok',    label: 'TikTok',    icon: Music,     color: 'rgba(255,255,255,0.8)' },
 ]
 
@@ -24,7 +24,7 @@ const HASHTAG_SETS = [
 ]
 
 type Tab = 'zh' | 'en'
-type PreviewPlatform = 'facebook' | 'instagram' | 'linkedin' | 'tiktok'
+type PreviewPlatform = 'facebook' | 'instagram' | 'youtube' | 'tiktok'
 
 export default function CreatePostPage() {
   const [title, setTitle] = useState('')

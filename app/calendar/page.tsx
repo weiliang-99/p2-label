@@ -12,7 +12,7 @@ import {
 const MOCK_POSTS = [
   { id: '1', title: 'CNY Countdown', date: '2025-01-25', platform: 'instagram', status: 'scheduled', color: '#e0ee7d' },
   { id: '2', title: 'Brand Story',   date: '2025-01-22', platform: 'facebook',  status: 'published', color: '#60a5fa' },
-  { id: '3', title: 'Product Launch',date: '2025-01-28', platform: 'linkedin',  status: 'draft',     color: '#a78bfa' },
+  { id: '3', title: 'Product Launch',date: '2025-01-28', platform: 'youtube',  status: 'draft',     color: '#a78bfa' },
   { id: '4', title: 'Raya Promo',    date: '2025-01-29', platform: 'instagram', status: 'scheduled', color: '#e0ee7d' },
   { id: '5', title: 'Team Spotlight',date: '2025-01-30', platform: 'tiktok',    status: 'approved',  color: '#34d399' },
 ]

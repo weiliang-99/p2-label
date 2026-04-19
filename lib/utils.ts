@@ -22,14 +22,14 @@ export function formatDateTime(date: string | Date) {
 export const PLATFORM_COLORS: Record<string, string> = {
   facebook: '#1877F2',
   instagram: '#E1306C',
-  linkedin: '#0A66C2',
+  youtube: '#0A66C2',
   tiktok: '#000000',
 }
 
 export const PLATFORM_LIMITS: Record<string, number> = {
   facebook: 63206,
   instagram: 2200,
-  linkedin: 3000,
+  youtube: 3000,
   tiktok: 2200,
 }
 

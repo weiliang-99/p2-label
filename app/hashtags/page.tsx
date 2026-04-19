@@ -13,7 +13,7 @@ const INITIAL_SETS = [
 ]
 
 const PLATFORM_COLORS: Record<string, string> = {
-  All: '#a78bfa', Instagram: '#E1306C', Facebook: '#1877F2', TikTok: 'rgba(255,255,255,0.7)', LinkedIn: '#0A66C2',
+  All: '#a78bfa', Instagram: '#E1306C', Facebook: '#1877F2', TikTok: 'rgba(255,255,255,0.7)', YouTube: '#0A66C2',
 }
 
 export default function HashtagsPage() {
@@ -80,7 +80,7 @@ export default function HashtagsPage() {
               <select value={newPlatform} onChange={e => setNewPlatform(e.target.value)}
                 className="w-full px-3 py-2 text-lg"
                 style={{ ...INPUT_STYLE, borderRadius: '16px' }}>
-                {['All','Instagram','Facebook','TikTok','LinkedIn'].map(p => <option key={p} value={p}>{p}</option>)}
+                {['All','Instagram','Facebook','TikTok','YouTube'].map(p => <option key={p} value={p}>{p}</option>)}
               </select>
             </div>
           </div>

@@ -1,26 +1,267 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .font-display {
+    font-family: var(--font-bebas, 'Bebas Neue', sans-serif);
+    letter-spacing: 0.03em;
+  }
+  .font-label {
+    font-family: var(--font-space, 'Space Mono', monospace);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+:root {
+  --accent:        #e0ee7d;
+  --bg:            #0a0a0a;
+  --bg-secondary:  #0d0d0d;
+  --surface:       #111111;
+  --surface-2:     #181818;
+  --surface-3:     #1a1a1a;
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-mid:    rgba(255, 255, 255, 0.13);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --text-muted:    rgba(255, 255, 255, 0.65);
+  --text-dim:      rgba(255, 255, 255, 0.5);
 }
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { background: #0a0a0a; }
+
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-syne, 'Syne', system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: #e0ee7d; color: #000; }
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 3px; height: 3px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: rgba(255, 255, 255, 0.1); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* ── Page enter animation ────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.page-enter {
+  animation: fadeUp 0.3s ease both;
+}
+
+/* Staggered children — wrap a grid/flex in .stagger to animate children in */
+.stagger > * {
+  animation: fadeUp 0.32s ease both;
+  animation-fill-mode: both;
+}
+.stagger > *:nth-child(1) { animation-delay: 0.04s; }
+.stagger > *:nth-child(2) { animation-delay: 0.08s; }
+.stagger > *:nth-child(3) { animation-delay: 0.12s; }
+.stagger > *:nth-child(4) { animation-delay: 0.16s; }
+.stagger > *:nth-child(5) { animation-delay: 0.20s; }
+.stagger > *:nth-child(6) { animation-delay: 0.24s; }
+.stagger > *:nth-child(7) { animation-delay: 0.28s; }
+.stagger > *:nth-child(8) { animation-delay: 0.32s; }
+
+/* Drawer slide in from right */
+.drawer-enter {
+  animation: slideInRight 0.22s ease both;
+}
+
+/* ── Card hover lift ─────────────────────────────────────────────────────── */
+.dark-card {
+  transition: border-color 180ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.dark-card:hover {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Table row hover slide ───────────────────────────────────────────────── */
+.table-row {
+  transition: background 120ms, transform 150ms ease, border-left-color 150ms ease;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+}
+.table-row:hover {
+  background: rgba(255, 255, 255, 0.025) !important;
+  transform: translateX(2px);
+  border-left-color: rgba(224, 238, 125, 0.3) !important;
+}
+
+/* ── Dropdown item hover ─────────────────────────────────────────────────── */
+.dropdown-item {
+  transition: background 120ms;
+}
+.dropdown-item:hover {
+  background: rgba(224, 238, 125, 0.05) !important;
+}
+
+/* ── Input dark focus glow ───────────────────────────────────────────────── */
+.dark-input:focus {
+  border-color: rgba(224, 238, 125, 0.4) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(224, 238, 125, 0.1), 0 0 0 1px rgba(224, 238, 125, 0.4);
+}
+
+/* ── Accent button ───────────────────────────────────────────────────────── */
+.btn-accent {
+  background: #e0ee7d;
+  color: #000000;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 150ms cubic-bezier(0.4,0,0.2,1), box-shadow 150ms ease, opacity 150ms;
+}
+.btn-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(224, 238, 125, 0.3);
+}
+.btn-accent:active { transform: scale(0.97) translateY(0); box-shadow: none; }
+
+/* ── Ghost button ────────────────────────────────────────────────────────── */
+.btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.75);
+  border-radius: 999px;
+  transition: border-color 150ms, color 150ms, transform 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+.btn-ghost:active { transform: scale(0.97); }
+
+/* ── Global button lift (inline-styled buttons) ──────────────────────────── */
+button, a {
+  transition-property: transform, box-shadow, opacity, border-color, color, background;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── KPI count-up ────────────────────────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(14px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.count-up {
+  animation: countUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Dropdown / modal entrance ───────────────────────────────────────────── */
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.dropdown-enter {
+  animation: dropdownIn 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Modal backdrop + panel entrance ────────────────────────────────────── */
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.modal-enter {
+  animation: modalIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Status badge pulse ──────────────────────────────────────────────────── */
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+.badge-pulse {
+  animation: badgePulse 2.2s ease infinite;
+}
+
+/* ── Glow dot (live/active indicators) ───────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(224, 238, 125, 0.5); }
+  50%       { box-shadow: 0 0 0 6px rgba(224, 238, 125, 0); }
+}
+.glow-dot {
+  animation: glowPulse 2s ease infinite;
+}
+
+/* ── Shimmer skeleton ────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ── Sidebar nav link hover ──────────────────────────────────────────────── */
+.nav-link {
+  transition: color 150ms, background 150ms;
+}
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 10px 10px 0;
+}
+/* Override hover for active links */
+.nav-link-active:hover {
+  background: transparent !important;
+}
+
+/* ── Validation error ────────────────────────────────────────────────────── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-4px); }
+  40%       { transform: translateX(4px); }
+  60%       { transform: translateX(-3px); }
+  80%       { transform: translateX(3px); }
+}
+.field-error {
+  border-color: rgba(248, 113, 113, 0.6) !important;
+  animation: shake 0.3s ease;
+}
+.error-text {
+  font-family: var(--font-space, monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f87171;
+  margin-top: 4px;
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+@media print {
+  /* Hide sidebar, nav chrome, and all no-print UI */
+  aside,
+  .no-print        { display: none !important; }
+
+  /* Remove sidebar margin so invoice fills full width */
+  main             { margin-left: 0 !important; overflow: visible !important; }
+  body             { background: white !important; color: black !important; overflow: visible !important; height: auto !important; }
+  html             { overflow: visible !important; height: auto !important; }
+
+  /* Show only the printable invoice */
+  .print-only      { display: block !important; }
+}
+.print-only { display: none; }

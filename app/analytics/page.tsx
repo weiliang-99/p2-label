@@ -30,7 +30,7 @@ const pieData = [
   { name: 'Instagram', value: 38, color: '#e0ee7d' },
   { name: 'TikTok',    value: 24, color: 'rgba(224,238,125,0.5)' },
   { name: 'Facebook',  value: 28, color: 'rgba(255,255,255,0.55)' },
-  { name: 'YouTube',  value: 10, color: 'rgba(255,255,255,0.08)' },
+  { name: 'YouTube',  value: 10, color: 'rgba(255,0,0,0.55)' },
 ]
 
 const topPosts = [

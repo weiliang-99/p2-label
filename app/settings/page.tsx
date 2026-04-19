@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { Save, Check, Globe, Camera, Building2, Music } from 'lucide-react'
+import { Save, Check, Globe, Camera, PlayCircle, Music } from 'lucide-react'
 import { SURFACE, INPUT_STYLE } from '@/lib/theme'
 
 const PLATFORMS_CONNECT = [
   { id: 'facebook',  label: 'Facebook Page',     icon: Globe,     color: '#1877F2', connected: false },
   { id: 'instagram', label: 'Instagram Business', icon: Camera,   color: '#E1306C', connected: true  },
-  { id: 'youtube',  label: 'YouTube Company',   icon: Building2, color: '#0A66C2', connected: false },
+  { id: 'youtube',  label: 'YouTube Channel',   icon: PlayCircle, color: '#FF0000', connected: false },
   { id: 'tiktok',    label: 'TikTok Business',    icon: Music,     color: 'rgba(255,255,255,0.7)', connected: false },
 ]
 

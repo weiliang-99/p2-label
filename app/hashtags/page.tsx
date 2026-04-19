@@ -13,7 +13,7 @@ const INITIAL_SETS = [
 ]
 
 const PLATFORM_COLORS: Record<string, string> = {
-  All: '#a78bfa', Instagram: '#E1306C', Facebook: '#1877F2', TikTok: 'rgba(255,255,255,0.7)', YouTube: '#0A66C2',
+  All: '#a78bfa', Instagram: '#E1306C', Facebook: '#1877F2', TikTok: 'rgba(255,255,255,0.7)', YouTube: '#FF0000',
 }
 
 export default function HashtagsPage() {

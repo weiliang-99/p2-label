@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import {
-  Globe, Camera, Building2, Music, Sparkles, Upload,
+  Globe, Camera, PlayCircle, Music, Sparkles, Upload,
   Clock, X, Plus, Send, RefreshCw
 } from 'lucide-react'
 import { cn, PLATFORM_LIMITS } from '@/lib/utils'
@@ -11,7 +11,7 @@ import { SURFACE, INPUT_STYLE } from '@/lib/theme'
 const PLATFORMS = [
   { id: 'facebook',  label: 'Facebook',  icon: Globe,     color: '#1877F2' },
   { id: 'instagram', label: 'Instagram', icon: Camera,    color: '#E1306C' },
-  { id: 'youtube',  label: 'YouTube',  icon: Building2, color: '#0A66C2' },
+  { id: 'youtube',  label: 'YouTube',  icon: PlayCircle, color: '#FF0000' },
   { id: 'tiktok',    label: 'TikTok',    icon: Music,     color: 'rgba(255,255,255,0.8)' },
 ]
 
